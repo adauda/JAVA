@@ -10,7 +10,9 @@ A simple Accumulator calculator for Single digit numbers implementing Java Swing
  * 				Decimal Numbers formatted to 4 Points of precision.
  * 				Checks for Arithmetic Exception manually and throws it if exists in the case of divide by zero.
 
-Checkout the screenshot here : ![Calculator Screenshot](http://i.imgur.com/yXvJrS0.png)
+Checkout the screenshot 
+
+![Calculator Screenshot](http://i.imgur.com/yXvJrS0.png)
 
 Execution
 =========
