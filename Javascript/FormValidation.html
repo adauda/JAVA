@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//SQ//DTD HTML 2.0 HoTMetaL + extensions//EN">
+<HTML>
+<HEAD>
+<TITLE>Courses Radio Button Project </TITLE>
+
+<SCRIPT Language="JavaScript">
+<!--
+
+ function validateEmail(email) { 
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+} 
+ 
+ function checkForm(){
+	
+	var isNameValid;	
+	var iseMailValid;
+	if ((document.getElementById("nametag").value.split(" ").length)>1)
+		isNameValid = "Name was found to be valid";
+	else
+		isNameValid = "Name was NOT found to be valid!!!";
+
+	if(validateEmail(document.getElementById("eMail").value))
+		iseMailValid = "eMail is valid";
+	else
+		iseMailValid = "eMail is NOT valid!!!";
+		
+	
+	var firstChoice,firstChoices;
+	var secondChoice,secondChoices;
+	var thirdChoice,thirdChoices;
+	
+	firstChoices = document.getElementsByName("Choice1");
+	secondChoices = document.getElementsByName("Choice2");
+	thirdChoices = document.getElementsByName("Choice3");
+		
+		//alert("variables set");	
+	
+	for(var i = 0;i<firstChoices.length;i++){
+	if(firstChoices[i].checked)
+		firstChoice = firstChoices[i].value;
+	if(secondChoices[i].checked)
+		secondChoice = secondChoices[i].value;	
+	if(thirdChoices[i].checked)
+		thirdChoice = thirdChoices[i].value;
+	}
+	
+	//alert("for loop over");
+
+	//alert(firstChoice+secondChoice+thirdChoice);
+
+	if((firstChoice==secondChoice)|(secondChoice==thirdChoice)|(firstChoice==thirdChoice))
+		alert("Invalid Entry");
+	else
+		alert("Choices: "+firstChoice+" "+secondChoice+" "+thirdChoice+"\n"+iseMailValid+"\n"+isNameValid);
+ }
+
+
+//-->
+</SCRIPT>
+
+</HEAD>
+<BODY BGCOLOR="#efefef">
+<H2>Please choose three courses in order of preference:</H2>
+<H3>(You must choose different courses for your first second and third choice.)</H3>
+
+<FORM Name = "Courses" onSubmit="checkForm()">
+
+<TABLE>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1"><B>Course</B></TD>
+<TD ALIGN="CENTER" COLSTART="2"><B>First Choice</B></TD>
+<TD ALIGN="CENTER" COLSTART="3"><B>Second Choice</B></TD>
+<TD ALIGN="CENTER" COLSTART="4"><B>Third Choice</B></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">English</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT
+TYPE="RADIO" NAME="Choice1" VALUE="eng" CHECKED="CHECKED"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT
+TYPE="RADIO" NAME="Choice2" VALUE="eng" ></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT
+TYPE="RADIO" NAME="Choice3" VALUE="eng" ></TD>
+</TR>
+<TR><TD ALIGN="RIGHT" COLSTART="1">French</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" NAME="Choice1" VALUE="fre"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" NAME="Choice2" VALUE="fre" CHECKED="CHECKED"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" NAME="Choice3" VALUE="fre"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">Spanish</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" NAME="Choice1" VALUE="spa"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" NAME="Choice2" VALUE="spa"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" NAME="Choice3" VALUE="spa" CHECKED="CHECKED"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">Math</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" NAME="Choice1" VALUE="mat"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" NAME="Choice2" VALUE="mat"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" NAME="Choice3" VALUE="mat"></TD>
+</TR>
+<TR>
+<TD ALIGN="RIGHT" COLSTART="1">Science</TD>
+<TD ALIGN="CENTER" COLSTART="2"><INPUT TYPE="RADIO" NAME="Choice1" VALUE="sci"></TD>
+<TD ALIGN="CENTER" COLSTART="3"><INPUT TYPE="RADIO" NAME="Choice2" VALUE="sci"></TD>
+<TD ALIGN="CENTER" COLSTART="4"><INPUT TYPE="RADIO" NAME="Choice3" VALUE="sci"></TD>
+</TR>
+
+<TR>
+<TD>Name</TD><TD><INPUT TYPE="TEXT" NAME="NAME" id="nametag" VALUE="First Name Last Name"></TD>
+</TR>
+<TR>
+<TD>eMail</TD><TD><INPUT TYPE="TEXT" NAME="EMAIL" id="eMail" VALUE="Enter your eMail"></TD>
+</TR>
+
+</TABLE>
+<P><INPUT TYPE="SUBMIT" VALUE="Register" SIZE="20">
+<INPUT TYPE="RESET" VALUE="Reset" SIZE="20"></P></FORM>
+</BODY></HTML>
